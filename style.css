@@ -2,4 +2,143 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  display: flex;
+}
+
+:root {
+  --light-white:#fafafa;
+  --light-black:#eeeeee;
+}
+
+button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+nav {
+  height: 100vh;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--light-white);
+}
+nav .top {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+nav .top .user, nav .top .logo {
+  width: 35px;
+  height: 35px;
+}
+nav .top .user {
+  cursor: pointer;
+  border-radius: 50%;
+}
+nav .center {
+  margin-top: 24px;
+  flex: 1;
+}
+nav .bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+nav .bottom button img {
+  width: 20px;
+}
+
+.messages {
+  width: 350px;
+  border-right: 1px solid var(--light-black);
+}
+.messages .top {
+  padding: 35px 20px 0 20px;
+}
+.messages .top h2 {
+  font-size: 23px;
+}
+.messages .top .search {
+  width: 100%;
+  display: flex;
+  margin-top: 10px;
+  background-color: var(--light-black);
+  border-radius: 12px;
+}
+.messages .top .search .left {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+.messages .top .search .left img {
+  width: 18px;
+}
+.messages .top .search .right {
+  width: 100%;
+  height: inherit;
+}
+.messages .top .search .right input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  padding-right: 10px;
+}
+.messages .bottom {
+  margin-top: 15px;
+}
+.messages .bottom .user {
+  display: flex;
+  gap: 10px;
+  padding: 10px 20px;
+  transition: 0.5s;
+  cursor: pointer;
+  position: relative;
+}
+.messages .bottom .user .left {
+  width: 36px;
+}
+.messages .bottom .user .left .user-img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+}
+.messages .bottom .user .left .online {
+  width: 10px;
+  position: absolute;
+  margin-top: 24px;
+  transform: translateX(-8px);
+}
+.messages .bottom .user .center {
+  width: 250px;
+}
+.messages .bottom .user .center .text {
+  font-size: 0.8rem;
+  opacity: 45%;
+}
+.messages .bottom .user .right {
+  width: 40px;
+}
+.messages .bottom .user .right p {
+  float: right;
+  opacity: 65%;
+}
+.messages .bottom .user .right img {
+  display: block;
+  float: right;
+  margin-top: 5px;
+}
+.messages .bottom .user:hover {
+  background-color: var(--light-black);
 }/*# sourceMappingURL=style.css.map */
