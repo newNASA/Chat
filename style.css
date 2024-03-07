@@ -10,8 +10,12 @@ body {
 }
 
 :root {
+  --white:#fff;
   --light-white:#fafafa;
+  --black:#000;
   --light-black:#eeeeee;
+  --medium-black:#8C8C8CFF;
+  --green:#27AE60;
 }
 
 button {
@@ -60,10 +64,12 @@ nav .bottom button img {
 
 .messages {
   width: 350px;
+  height: 98vh;
   border-right: 1px solid var(--light-black);
 }
 .messages .top {
   padding: 35px 20px 0 20px;
+  height: 15%;
 }
 .messages .top h2 {
   font-size: 23px;
@@ -97,6 +103,11 @@ nav .bottom button img {
 }
 .messages .bottom {
   margin-top: 15px;
+  overflow-y: auto;
+  height: 84%;
+}
+.messages .bottom::-webkit-scrollbar {
+  display: none;
 }
 .messages .bottom .user {
   display: flex;
@@ -123,9 +134,20 @@ nav .bottom button img {
 .messages .bottom .user .center {
   width: 250px;
 }
+.messages .bottom .user .center .name {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.messages .bottom .user .center .typing {
+  color: var(--green);
+}
+.messages .bottom .user .center .new-message {
+  opacity: 100% !important;
+}
 .messages .bottom .user .center .text {
   font-size: 0.8rem;
-  opacity: 45%;
+  color: var(--medium-black);
 }
 .messages .bottom .user .right {
   width: 40px;
@@ -134,6 +156,16 @@ nav .bottom button img {
   float: right;
   opacity: 65%;
 }
+.messages .bottom .user .right .new-message {
+  font-size: 0.6rem;
+  background-color: var(--green);
+  color: var(--white);
+  padding: 3px 5.5px;
+  border-radius: 100px;
+  display: flex;
+  justify-content: center;
+  opacity: 100% !important;
+}
 .messages .bottom .user .right img {
   display: block;
   float: right;
@@ -141,4 +173,20 @@ nav .bottom button img {
 }
 .messages .bottom .user:hover {
   background-color: var(--light-black);
+}
+
+.chat-default {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+  height: 100vh;
+}
+.chat-default p {
+  background-color: var(--green);
+  color: var(--white);
+  padding: 3px 5px;
+  border-radius: 5pc;
+  font-size: 0.8rem;
 }/*# sourceMappingURL=style.css.map */

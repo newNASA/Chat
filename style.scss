@@ -13,8 +13,12 @@ body{
 }
 
 :root{
+    --white:#fff;
     --light-white:#fafafa;
+    --black:#000;
     --light-black:#eeeeee;
+    --medium-black:#8C8C8CFF;
+    --green:#27AE60;
 }
 
 button{
@@ -23,6 +27,8 @@ button{
     background-color: transparent;
     cursor: pointer;
 }
+
+// navbar styles
 
 nav{
     height: 100vh;
@@ -63,11 +69,15 @@ nav{
     }
 }
 
+// messages styles
+
 .messages{
     width: 350px;
+    height: 98vh;
     border-right:1px solid var(--light-black);
     .top{
         padding: 35px 20px 0 20px;
+        height: 15%;
         h2{
             font-size: 23px;
         }
@@ -103,6 +113,12 @@ nav{
 
     .bottom{
         margin-top: 15px;
+        overflow-y: auto;
+        height: 84%;
+
+        &::-webkit-scrollbar{
+            display: none;
+        }
         .user{
             display: flex;
             gap: 10px;
@@ -127,9 +143,20 @@ nav{
 
             .center{
                 width: 250px;
+                .name{
+                    display: flex;
+                    align-items: center;
+                    gap: 5px;
+                }
+                .typing{
+                    color: var(--green);
+                }
+                .new-message{
+                    opacity: 100% !important;
+                }
                 .text{
                     font-size: 0.8rem;
-                    opacity: 45%;
+                    color:var(--medium-black) ;
                 }
             }
 
@@ -138,6 +165,16 @@ nav{
                 p{
                     float: right;
                     opacity: 65%;
+                }
+                .new-message{
+                    font-size: 0.6rem;
+                    background-color: var(--green);
+                    color: var(--white);
+                    padding: 3px 5.5px;
+                    border-radius: 100px;
+                    display: flex;
+                    justify-content: center;
+                    opacity: 100% !important;
                 }
                 img{
                     display: block;
@@ -150,5 +187,23 @@ nav{
                 background-color: var(--light-black);
             }
         }
+    }
+}
+
+// chat styles
+
+.chat-default{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    height: 100vh;
+    p{
+        background-color: var(--green);
+        color: var(--white);
+        padding: 3px 5px;
+        border-radius: 5pc;
+        font-size: 0.8rem;
     }
 }
