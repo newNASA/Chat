@@ -176,7 +176,7 @@ nav .bottom button img {
 }
 
 .chat-default {
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   width: 100%;
@@ -189,4 +189,37 @@ nav .bottom button img {
   padding: 3px 5px;
   border-radius: 5pc;
   font-size: 0.8rem;
+}
+
+.chat {
+  width: 100%;
+}
+.chat .chat-navbar {
+  border-bottom: 1px solid var(--light-black);
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.chat .chat-navbar .left {
+  display: flex;
+  gap: 10px;
+}
+.chat .chat-navbar .left .img .user-img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+}
+.chat .chat-navbar .left .text span {
+  color: var(--green);
+  font-size: 0.9rem;
+}
+.chat .chat-navbar .right {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  padding-right: 10px;
+}
+.chat .chat-navbar .right img {
+  cursor: pointer;
 }/*# sourceMappingURL=style.css.map */

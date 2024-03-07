@@ -190,10 +190,10 @@ nav{
     }
 }
 
-// chat styles
+// chat default styles
 
 .chat-default{
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     width: 100%;
@@ -205,5 +205,47 @@ nav{
         padding: 3px 5px;
         border-radius: 5pc;
         font-size: 0.8rem;
+    }
+}
+
+// chat styles
+
+.chat{
+    width: 100%;
+    .chat-navbar{
+        border-bottom: 1px solid var(--light-black);
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+
+        .left{
+            display: flex;
+            gap: 10px;
+            .img{
+                .user-img{
+                    width: 36px;
+                    height: 36px;
+                    border-radius: 50%;
+                }
+            }
+            .text{
+                span{
+                    color: var(--green);
+                    font-size: 0.9rem;
+                }
+            }
+
+        }
+
+        .right{
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            align-items: center;    
+            padding-right: 10px;
+            img{
+                cursor: pointer;
+            }
+        }
     }
 }
