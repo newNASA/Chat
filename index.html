@@ -227,8 +227,8 @@
                     <p>16:45</p>
                     <img src="/assets/imgs/doubletick.png" alt="">
                 </div>
-            </div> 
-            
+            </div>
+
             <!-- double tick user -->
 
             <div class="double-tick user">
@@ -276,9 +276,57 @@
                 <img src="/assets/imgs/info.png" alt="">
             </div>
         </div>
+
+        <div class="message" id="messageContainer">
+            <div class="mes right">
+                <p>See you at office tomorrow!</p>
+                <span></span>
+            </div>
+            <div class="mes left"></div>
+        </div>
+
+        <div class="sender">
+            <form action="">
+                <img src="/assets/imgs/link.png" width="13" height="15" alt="">
+                <textarea name="" id="message" placeholder="Type your message here.."></textarea>
+                <button type="submit">Send message</button>
+            </form>
+        </div>
     </div>
 
     <!-- Chat coding end -->
+
+
+    <script>
+        function autoExpand(textarea) {
+            // Set the textarea's height to its scrollHeight
+            textarea.style.height = 'auto';
+            textarea.style.height = (textarea.scrollHeight) + 'px';
+        }
+
+        // Hozirgi heightni saqlab olish
+        var textarea = document.getElementById('message');
+        var originalHeight = textarea.scrollHeight;
+
+        textarea.addEventListener('input', function () {
+            autoExpand(this);
+
+            // Pastga tushganda orqiginal o'lchamni sozlash
+            if (textarea.scrollHeight > originalHeight) {
+                originalHeight = textarea.scrollHeight;
+            }
+        });
+
+        const bodyHeight = document.querySelector('body').clientHeight;
+        const senderHeight = document.querySelector('.sender').clientHeight;
+        const chatNavbarHeight = document.querySelector('.chat-navbar').clientHeight;
+        const message = document.querySelector('.message');
+
+        message.style.height = `${bodyHeight - (senderHeight + chatNavbarHeight)}px`;
+
+        console.log(senderHeight);
+    </script>
+
 </body>
 
 </html>

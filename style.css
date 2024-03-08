@@ -10,12 +10,13 @@ body {
 }
 
 :root {
-  --white:#fff;
-  --light-white:#fafafa;
-  --black:#000;
-  --light-black:#eeeeee;
-  --medium-black:#8C8C8CFF;
-  --green:#27AE60;
+  --white: #fff;
+  --light-white: #fafafa;
+  --black: #000;
+  --light-black: #eeeeee;
+  --medium-black: #8c8c8cff;
+  --gray: rgba(244, 244, 247, 1);
+  --green: #27ae60;
 }
 
 button {
@@ -40,7 +41,8 @@ nav .top {
   align-items: center;
   gap: 12px;
 }
-nav .top .user, nav .top .logo {
+nav .top .user,
+nav .top .logo {
   width: 35px;
   height: 35px;
 }
@@ -69,7 +71,6 @@ nav .bottom button img {
 }
 .messages .top {
   padding: 35px 20px 0 20px;
-  height: 15%;
 }
 .messages .top h2 {
   font-size: 23px;
@@ -193,12 +194,14 @@ nav .bottom button img {
 
 .chat {
   width: 100%;
+  height: 100vh;
 }
 .chat .chat-navbar {
-  border-bottom: 1px solid var(--light-black);
+  border-bottom: 1px solid var(--light-white);
   padding: 10px;
   display: flex;
   justify-content: space-between;
+  height: 60px;
 }
 .chat .chat-navbar .left {
   display: flex;
@@ -222,4 +225,49 @@ nav .bottom button img {
 }
 .chat .chat-navbar .right img {
   cursor: pointer;
+}
+.chat .message {
+  background-color: var(--light-white);
+  padding: 0 20px;
+}
+.chat .message .mes {
+  padding: 10px;
+  border-radius: 17px;
+  background-color: var(--gray);
+}
+.chat .sender {
+  width: 100%;
+  padding: 10px 20px;
+  background-color: var(--white);
+  position: fixed;
+  bottom: 0;
+}
+.chat .sender form {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 15px;
+}
+.chat .sender textarea {
+  height: 36px;
+  padding-top: 8px;
+  padding-left: 10px;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  resize: none;
+  overflow: hidden;
+  outline: none;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  width: 60%;
+  background-color: var(--light-white);
+  transition: 0.3s;
+  max-height: 25dvh;
+}
+.chat .sender textarea:focus {
+  border: 1px solid var(--green);
+}
+.chat .sender button {
+  color: var(--green);
 }/*# sourceMappingURL=style.css.map */
