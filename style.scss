@@ -210,7 +210,7 @@ nav {
 // chat styles
 
 .chat {
-  width: 100%;
+  width: 52%;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -220,8 +220,6 @@ nav {
     padding: 10px;
     display: flex;
     justify-content: space-between;
-    height: 60px;
-    // position: fixed;
 
     .left {
       display: flex;
@@ -266,19 +264,20 @@ nav {
       padding: 8px;
       border-radius: 12px;
       background-color: var(--gray);
-      width: fit-content  ;
+      width: fit-content;
       max-width: 80%;
       font-size: 0.9rem;
       margin-top: 10px;
+      clear: both;
       &:first-child{
         margin: 0;
       }
     }
 
     .left{
-      float: right;
       background-color: var(--green);
       color: var(--white);
+      float: right;
     }
   }
 
@@ -320,6 +319,36 @@ nav {
     }
 
     button {
+      color: var(--green);
+    }
+  }
+}
+
+.user-infos{
+  width: 25%;
+  border-left: 1px solid var(--light-black);
+  padding: 20px;
+  .top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    img{
+      width: 12px;
+      cursor: pointer;
+    }
+  }
+
+  .user-profile{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    img{
+      width: 4rem;
+      height: 4rem;
+      border-radius: 50%;
+    }
+    span{
       color: var(--green);
     }
   }

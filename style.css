@@ -193,7 +193,7 @@ nav .bottom button img {
 }
 
 .chat {
-  width: 100%;
+  width: 52%;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -204,7 +204,6 @@ nav .bottom button img {
   padding: 10px;
   display: flex;
   justify-content: space-between;
-  height: 60px;
 }
 .chat .chat-navbar .left {
   display: flex;
@@ -247,14 +246,15 @@ nav .bottom button img {
   max-width: 80%;
   font-size: 0.9rem;
   margin-top: 10px;
+  clear: both;
 }
 .chat .message .xabar:first-child {
   margin: 0;
 }
 .chat .message .left {
-  float: right;
   background-color: var(--green);
   color: var(--white);
+  float: right;
 }
 .chat .sender {
   padding: 10px 20px;
@@ -290,5 +290,34 @@ nav .bottom button img {
   border: 1px solid var(--green);
 }
 .chat .sender button {
+  color: var(--green);
+}
+
+.user-infos {
+  width: 25%;
+  border-left: 1px solid var(--light-black);
+  padding: 20px;
+}
+.user-infos .top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.user-infos .top img {
+  width: 12px;
+  cursor: pointer;
+}
+.user-infos .user-profile {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.user-infos .user-profile img {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+}
+.user-infos .user-profile span {
   color: var(--green);
 }/*# sourceMappingURL=style.css.map */
