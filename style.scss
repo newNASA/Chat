@@ -215,6 +215,7 @@ nav {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  transition: 0.5s;
   .chat-navbar {
     border-bottom: 1px solid var(--light-white);
     padding: 10px;
@@ -328,11 +329,14 @@ nav {
   width: 25%;
   border-left: 1px solid var(--light-black);
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: 0.5s;
   .top{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 20px;
     img{
       width: 12px;
       cursor: pointer;
@@ -350,6 +354,37 @@ nav {
     }
     span{
       color: var(--green);
+    }
+  }
+
+  .infos{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    .info{
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      p{
+        font-size: 0.9rem;
+      }
+      span{
+        color: var(--medium-black);
+        font-size: 0.8rem;
+      }
+      img{
+        width: 18px;
+        height: 18px;
+        fill: var(--medium-black) !important;
+      }
+    }
+    .username .right p{
+      color: var(--green);
+      cursor: pointer;
+
+      &:hover{
+        text-decoration: underline;
+      }
     }
   }
 }

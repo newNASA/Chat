@@ -35,3 +35,31 @@ messageContainer.scrollTop = messageContainer.scrollHeight;
 function scrollToBottom() {
   messageContainer.scrollTop = messageContainer.scrollHeight;
 }
+
+const profile_info = document.querySelector('.chat .chat-navbar .right img');
+const chat = document.querySelector('.chat');
+const user_infos = document.querySelector('.user-infos');
+const user_info_close = document.querySelector('.user-infos .top img');
+let isChatExpanded = false;
+
+profile_info.addEventListener('click', function () {
+  isChatExpanded = !isChatExpanded;
+
+  if (isChatExpanded) {
+    chat.style.width = '100%';
+    user_infos.style.marginLeft = '100%';
+    user_infos.style.display = 'none';
+} else {
+    user_infos.style.marginLeft = '';
+    chat.style.width = '';
+    user_infos.style.display = '';
+}
+});
+
+user_info_close.addEventListener('click', function(){
+    isChatExpanded = !isChatExpanded;
+    
+    user_infos.style.transform = '100%';
+    chat.style.width = '100%';
+    user_infos.style.display = 'none';
+});

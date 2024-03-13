@@ -198,6 +198,7 @@ nav .bottom button img {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  transition: 0.5s;
 }
 .chat .chat-navbar {
   border-bottom: 1px solid var(--light-white);
@@ -297,12 +298,15 @@ nav .bottom button img {
   width: 25%;
   border-left: 1px solid var(--light-black);
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: 0.5s;
 }
 .user-infos .top {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 20px;
 }
 .user-infos .top img {
   width: 12px;
@@ -320,4 +324,33 @@ nav .bottom button img {
 }
 .user-infos .user-profile span {
   color: var(--green);
+}
+.user-infos .infos {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.user-infos .infos .info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.user-infos .infos .info p {
+  font-size: 0.9rem;
+}
+.user-infos .infos .info span {
+  color: var(--medium-black);
+  font-size: 0.8rem;
+}
+.user-infos .infos .info img {
+  width: 18px;
+  height: 18px;
+  fill: var(--medium-black) !important;
+}
+.user-infos .infos .username .right p {
+  color: var(--green);
+  cursor: pointer;
+}
+.user-infos .infos .username .right p:hover {
+  text-decoration: underline;
 }/*# sourceMappingURL=style.css.map */
