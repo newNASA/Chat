@@ -21,6 +21,56 @@
 
 <body>
 
+    <div class="fixer" onclick="settings('close')"></div>
+    <!-- settings coding -->
+
+    <div class="settings">
+
+        <div class="container">
+            <div class="top">
+                <p>Settings</p>
+                <img src="/assets/imgs/cancel-close-svgrepo-com.svg" onclick="settings('close')" alt="">
+            </div>
+            <div class="user-profile">
+                <div class="left">
+                    <img src="/assets/imgs/user.jpg" alt="">
+                </div>
+                <div class="right">
+                    <p><b>Travis Barker</b></p>
+                    <span>azizbekgulomovweb@gmail.com</span>
+                    <span>@utopian</span>
+                </div>
+            </div>  
+            <hr>    
+            <ul>
+                <li>
+                    <img src="/assets/imgs/profile-1335-svgrepo-com.svg" width="18" alt="">
+                    <p>Account Settings</p>
+                </li>
+                <li>
+                    <img src="/assets/imgs/chat-round-line-svgrepo-com.svg" width="18" alt="">
+                    <p>Chat Settings</p>
+                </li>
+                <li>
+                    <img src="/assets/imgs/language-outline-svgrepo-com.svg" width="18" alt="">
+                    <p>Language</p>
+                </li>
+            </ul>
+
+            <hr>
+
+            <ul>
+                <li>
+                    <img src="/assets/imgs/contact-svgrepo-com.svg" width="18" alt="">
+                    <p>Contact us</p>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- settings coding end -->
+
     <!-- navbar coding -->
 
     <nav>
@@ -37,7 +87,7 @@
         </div>
 
         <div class="bottom">
-            <button>
+            <button onclick="settings('open')">
                 <img src="/assets/imgs/settings.png" alt="">
             </button>
             <button>

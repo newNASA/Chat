@@ -63,3 +63,13 @@ user_info_close.addEventListener('click', function(){
     chat.style.width = '100%';
     user_infos.style.display = 'none';
 });
+
+const setting = document.querySelector('.settings');
+
+function settings(e){
+    if (e === "open"){
+        setting.style.display = 'flex';
+    }else{
+        setting.style.display = 'none';
+    }
+}
