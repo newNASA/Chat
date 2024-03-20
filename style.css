@@ -21,6 +21,7 @@ li {
   --medium-black: #8c8c8cff;
   --gray: rgba(244, 244, 247, 1);
   --green: #27ae60;
+  --light-red: #ff1a1a;
 }
 
 button {
@@ -437,4 +438,32 @@ nav .bottom button img {
 }
 .settings .container ul li img {
   fill: var(--green) !important;
+}
+
+.logout {
+  align-items: center;
+  padding: 0;
+}
+.logout .container span {
+  font-size: 0.9rem;
+  color: var(--medium-black);
+}
+.logout .container .btns {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 10px;
+}
+.logout .container .btns button {
+  padding: 5px 10px;
+  color: var(--white);
+  border-radius: 5px;
+  font-size: 1rem;
+}
+.logout .container .btns button:first-child {
+  background-color: var(--medium-black);
+}
+.logout .container .btns button:last-child {
+  background-color: var(--light-red);
 }/*# sourceMappingURL=style.css.map */

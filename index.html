@@ -21,7 +21,6 @@
 
 <body>
 
-    <div class="fixer" onclick="settings('close')"></div>
     <!-- settings coding -->
 
     <div class="settings">
@@ -71,6 +70,24 @@
 
     <!-- settings coding end -->
 
+    <!-- logout coding -->
+
+    <div class="logout settings">
+        <div class="container">
+            <div class="top">
+                <p>Log Out</p>
+                <img src="/assets/imgs/cancel-close-svgrepo-com.svg" onclick="logout('close')" alt="">
+            </div>
+            <span>Are you sure?</span>
+            <div class="btns">
+                <button onclick="logout('close')">Cancel</button>
+                <button type="submit">Log out</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- logout coding end -->
+
     <!-- navbar coding -->
 
     <nav>
@@ -90,7 +107,7 @@
             <button onclick="settings('open')">
                 <img src="/assets/imgs/settings.png" alt="">
             </button>
-            <button>
+            <button onclick="logout('open')">
                 <img src="/assets/imgs/logout.png" alt="">
             </button>
         </div>

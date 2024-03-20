@@ -73,3 +73,13 @@ function settings(e){
         setting.style.display = 'none';
     }
 }
+
+const out = document.querySelector('.logout');
+
+function logout(e){
+    if (e === "open"){
+        out.style.display = 'flex';
+    }else{
+        out.style.display = 'none';
+    }
+}
