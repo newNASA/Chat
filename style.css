@@ -21,6 +21,7 @@ li {
   --medium-black: #8c8c8cff;
   --gray: rgba(244, 244, 247, 1);
   --green: #27ae60;
+  --opacity-green:rgba(39, 174, 96, 0.7);
   --light-red: #ff1a1a;
 }
 
@@ -71,11 +72,12 @@ nav .bottom button img {
 
 .messages {
   width: 350px;
-  height: 98vh;
+  height: 100vh;
   border-right: 1px solid var(--light-black);
 }
 .messages .top {
   padding: 35px 20px 0 20px;
+  height: 16%;
 }
 .messages .top h2 {
   font-size: 23px;
@@ -110,7 +112,7 @@ nav .bottom button img {
 .messages .bottom {
   margin-top: 15px;
   overflow-y: auto;
-  height: 84%;
+  height: 81%;
 }
 .messages .bottom::-webkit-scrollbar {
   display: none;
@@ -424,6 +426,10 @@ nav .bottom button img {
 .settings .container .user-profile span {
   color: var(--medium-black);
 }
+.settings .container .user-profile span:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
 .settings .container ul li {
   display: flex;
   align-items: center;
@@ -438,6 +444,110 @@ nav .bottom button img {
 }
 .settings .container ul li img {
   fill: var(--green) !important;
+}
+
+.profile-edit {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  transition: 0.5s;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.2);
+}
+.profile-edit .container {
+  width: 400px;
+  padding: 15px;
+  background-color: var(--white);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 999;
+}
+.profile-edit .container .top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+.profile-edit .container .top p {
+  flex: 1;
+}
+.profile-edit .container .top img {
+  cursor: pointer;
+}
+.profile-edit .container .top img:last-child {
+  width: 12px;
+}
+.profile-edit .container .img form .file-label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin: 10px 0;
+}
+.profile-edit .container .img form .file-label .pro-img {
+  width: 100px;
+  height: 100px;
+  background-color: #000;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.profile-edit .container .img form .file-label .pro-img:hover .camera {
+  transform: translateY(-25px);
+}
+.profile-edit .container .img form .file-label .pro-img .camera {
+  transition: 0.5s;
+  background: var(--opacity-green);
+  display: flex;
+  justify-content: center;
+  padding-bottom: 10px;
+}
+.profile-edit .container .img form .file-label .file {
+  display: none;
+}
+.profile-edit .container .img form .file-label .file-custom {
+  margin-left: 10px;
+}
+.profile-edit .container .img form #profileImage {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.profile-edit .container .img form .infos {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 30px;
+}
+.profile-edit .container .img form .infos label {
+  font-size: 14px;
+  color: var(--medium-black);
+}
+.profile-edit .container .img form .infos input, .profile-edit .container .img form .infos textarea {
+  width: 100%;
+  outline: none;
+  padding: 8px;
+  border-radius: 10px;
+  border: 1px solid var(--medium-black);
+  resize: none;
+}
+.profile-edit .container .img form .infos button {
+  padding: 10px 20px;
+  background-color: var(--green);
+  color: var(--white);
+  border-radius: 10px;
+}
+.profile-edit .container .img form label, .profile-edit .container .img form input {
+  display: block;
 }
 
 .logout {

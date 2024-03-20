@@ -83,3 +83,16 @@ function logout(e){
         out.style.display = 'none';
     }
 }
+
+const editProfile = document.querySelector('.profile-edit');
+function EditProfile(e){
+    if (e === "open"){
+        setting.style.display = 'none';
+        editProfile.style.display = 'flex';
+    }else if (e === "back"){
+        editProfile.style.display = 'none';
+        setting.style.display = 'flex';
+    }else if (e === "close"){
+        editProfile.style.display = 'none';
+    }
+}

@@ -22,6 +22,7 @@ li{
   --medium-black: #8c8c8cff;
   --gray: rgba(244, 244, 247, 1);
   --green: #27ae60;
+  --opacity-green:rgba(39, 174, 96, 0.7);
   --light-red: #ff1a1a;
 }
 
@@ -78,10 +79,11 @@ nav {
 
 .messages {
   width: 350px;
-  height: 98vh;
+  height: 100vh;
   border-right: 1px solid var(--light-black);
   .top {
     padding: 35px 20px 0 20px;
+    height: 16%;
     h2 {
       font-size: 23px;
     }
@@ -118,7 +120,7 @@ nav {
   .bottom {
     margin-top: 15px;
     overflow-y: auto;
-    height: 84%;
+    height: 81%;
 
     &::-webkit-scrollbar {
       display: none;
@@ -456,6 +458,10 @@ nav {
       }
       span{
         color: var(--medium-black);
+        &:hover{
+          text-decoration:underline;
+          cursor: pointer;
+        }
       }
     }
     ul{
@@ -480,6 +486,113 @@ nav {
   }
 }
 
+.profile-edit{
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  transition: 0.5s;
+  z-index: 100;
+  background: rgba(0, 0 , 0 ,0.2);
+
+  .container{
+    width: 400px;
+    padding: 15px;
+    background-color: var(--white);
+    border-radius: 12px ;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 999;
+    .top{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      p{
+        flex: 1;
+      }
+      img{
+        cursor: pointer;
+        &:last-child{
+          width: 12px;
+        }
+      }
+    }
+    .img{
+      form{
+        .file-label {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          cursor: pointer;  
+          margin: 10px 0;
+          .pro-img{
+            width: 100px;
+            height: 100px;
+            background-color: #000;
+            border-radius: 50%;
+            overflow: hidden;
+            &:hover{
+              .camera{
+                transform: translateY(-25px);
+              }
+            }
+            .camera{
+              transition: 0.5s;
+              background: var(--opacity-green);
+              display: flex;
+              justify-content: center;  
+              padding-bottom: 10px;
+            }
+          }
+          .file{
+            display: none;
+          }
+          .file-custom {
+            margin-left: 10px;
+          }
+        }
+        #profileImage {
+          width: 100px;
+          height: 100px;
+          border-radius: 50%;
+          object-fit: cover;
+        }
+        .infos{
+          display: flex;
+          flex-direction: column;
+          gap: 15px;
+          margin-top: 30px;
+          label{
+            font-size: 14px;
+            color: var(--medium-black);
+          }
+          input, textarea{
+            width: 100%;
+            outline: none;
+            padding: 8px;
+            border-radius: 10px;
+            border: 1px solid var(--medium-black);
+            resize: none;
+          }
+          button{
+            padding: 10px 20px;
+            background-color: var(--green);
+            color: var(--white);
+            border-radius: 10px;
+          }
+        }
+        label, input{
+          display: block;
+        }
+      }
+    }
+  }
+}
 .logout{
   align-items: center;
   padding: 0;
