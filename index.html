@@ -50,7 +50,7 @@
                     <p>Chat Settings</p>
                     <img src="" alt="">
                 </li>
-                <li>
+                <li onclick="Language('open')">
                     <img src="/assets/imgs/language-outline-svgrepo-com.svg" width="18" alt="">
                     <p>Language</p>
                 </li>
@@ -61,14 +61,35 @@
             <ul>
                 <li>
                     <img src="/assets/imgs/contact-svgrepo-com.svg" width="18" alt="">
-                    <p>Contact us</p>
+                    <p><a href="https://t.me/utopian_uz">Contact us</a></p>
                 </li>
             </ul>
+            <text>Version: 1.0.0</text>
         </div>
-
     </div>
 
     <!-- settings coding end -->
+
+    <!-- language -->
+    
+    <div class="language">
+        <div class="container">
+            <div class="top">
+                <img src="/assets/imgs/arrow-back-svgrepo-com.svg" width="20" alt="" onclick="Language('back')">
+                <p>Language</p>
+                <img src="/assets/imgs/cancel-close-svgrepo-com.svg" onclick="Language('close')" alt="">
+            </div> 
+            <div class="bottom">
+                <ul>
+                    <li><img src="/assets/imgs/tick.png" alt="">O'zbek</li>
+                    <li><img src="/assets/imgs/tick.png" alt="">English</li>
+                    <li><img src="/assets/imgs/tick.png" alt="">Русский</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- language end -->
 
     <!-- profile edit -->
 

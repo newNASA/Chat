@@ -14,6 +14,11 @@ li{
   list-style: none;
 }
 
+a{
+  text-decoration: none;
+  color:var(--black);
+}
+
 :root {
   --white: #fff;
   --light-white: #fafafa;
@@ -478,10 +483,15 @@ nav {
           background-color: var(--light-black);
         }
         img{
-          // width: 18px;
           fill: var(--green) !important;
         }
       }
+    }
+    text{
+      text-decoration: none;
+      text-align: center;
+      color:var(--medium-black);
+      font-size: 0.7rem;
     }
   }
 }
@@ -619,6 +629,66 @@ nav {
 
         &:last-child{
           background-color:var(--light-red) ;
+        }
+      }
+    }
+  }
+}
+
+.language{
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  display: none ;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  transition: 0.5s;
+  z-index: 100;
+  background: rgba(0, 0 , 0 ,0.2);
+
+  .container{
+    width: 400px;
+    padding: 15px;
+    background-color: var(--white);
+    border-radius: 12px ;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 999;
+    .top{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      p{
+        flex: 1;
+      }
+      img{
+        cursor: pointer;
+        &:last-child{
+          width: 12px;
+        }
+      }
+    }
+    .bottom{
+      ul{
+        li{
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          padding: 10px;
+          cursor: pointer;
+          border-radius: 5px;
+          transition: 0.3s;
+  
+          &:hover{
+            background-color: var(--light-black);
+          }
+          img{
+            fill: var(--green) !important;
+            display: none;
+          }
         }
       }
     }
