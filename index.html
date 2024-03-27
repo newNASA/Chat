@@ -634,46 +634,6 @@
 
     <script src="assets/js/script.js"></script>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const fileInput = document.getElementById('fileInput');
-            const profileImage = document.getElementById('profileImage');
-
-            fileInput.addEventListener('change', function () {
-                const file = this.files[0];
-
-                if (file) {
-                    const reader = new FileReader();
-
-                    reader.onload = function (e) {
-                        profileImage.src = e.target.result;
-                    };
-
-                    reader.readAsDataURL(file);
-                }
-            });
-        });
-
-        // profile edit open
-
-        document.addEventListener('DOMContentLoaded', function () {
-            const profile_edit_x = document.querySelector(".profil-edit-x");
-            const profil_edit = document.querySelector(".profile-edit");
-            const edit = document.querySelector(".edit");
-
-            profile_edit_x.addEventListener("click", function () {
-                profil_edit.style.display = "none";
-            });
-
-            edit.addEventListener("click", function (event) {
-                event.preventDefault();
-                profil_edit.style.display = "flex";
-            });
-        });
-
-
-    </script>
-
 </body>
 
 </html>
