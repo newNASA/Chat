@@ -12,5 +12,23 @@
             }
         }
     }
+
+    .chat{
+        width: 100%;
+        .chat-navbar{
+            gap: 10px;
+            .chat-back{
+                display: block;
+            }
+            .left{
+                flex: 1;
+            }
+        }
+        .sender form{
+            textarea{
+                width: 250px;
+            }
+        }
+    }
     
 }

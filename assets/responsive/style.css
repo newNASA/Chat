@@ -11,4 +11,19 @@
   .messages .bottom .user {
     width: 100%;
   }
+  .chat {
+    width: 100%;
+  }
+  .chat .chat-navbar {
+    gap: 10px;
+  }
+  .chat .chat-navbar .chat-back {
+    display: block;
+  }
+  .chat .chat-navbar .left {
+    flex: 1;
+  }
+  .chat .sender form textarea {
+    width: 250px;
+  }
 }/*# sourceMappingURL=style.css.map */

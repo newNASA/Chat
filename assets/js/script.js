@@ -1,6 +1,3 @@
-if (elThemeTogglerButton) {
-    elThemeTogglerButton.addEventListener('click', switchTheme);
-}
 
 function autoExpand(textarea) {
     textarea.style.height = 'auto';
@@ -12,7 +9,7 @@ var originalHeight = textarea.scrollHeight;
 
 textarea.addEventListener('input', function () {
     autoExpand(this);
-
+    
     if (textarea.scrollHeight > originalHeight) {
         originalHeight = textarea.scrollHeight;
     }
@@ -48,7 +45,7 @@ let isChatExpanded = false;
 
 profile_info.addEventListener('click', function () {
     isChatExpanded = !isChatExpanded;
-
+    
     if (isChatExpanded) {
         chat.style.width = '100%';
         user_infos.style.marginLeft = '100%';
@@ -135,9 +132,21 @@ lis.forEach(element => {
 
 const users = document.querySelectorAll('.messages .bottom .user');
 const messages = document.querySelector('.messages');
-users.forEach(element => {
-    element.addEventListener('click', () => {
-        chat.style.display = 'flex';
-        messages.style.display = 'none';
+
+if(window.innerWidth <= 426){
+    users.forEach(element => {
+        element.addEventListener('click', () => {
+            chat.style.display = 'flex';
+            messages.style.display = 'none';
+        })
     })
-})
+}
+
+function chat_back(){
+    chat.style.display = 'none';
+    messages.style.display = 'block';
+}
+
+if (elThemeTogglerButton) {
+    elThemeTogglerButton.addEventListener('click', switchTheme);
+}

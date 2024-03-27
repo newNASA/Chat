@@ -39,8 +39,8 @@
                     <p><b>Travis Barker</b></p>
                     <span>@utopian</span>
                 </div>
-            </div>  
-            <hr>    
+            </div>
+            <hr>
             <ul>
                 <li onclick="EditProfile('open')">
                     <img src="/assets/imgs/profile-1335-svgrepo-com.svg" width="18" alt="">
@@ -49,7 +49,7 @@
                 <li class="theme-toggle-button">
                     <img src="/assets/imgs/chat-round-line-svgrepo-com.svg" width="18" alt="">
                     <p>Chat Settings</p>
-                    <img src="" alt="">
+                    <img src="/assets//imgs/warning-circle-svgrepo-com.svg" width="18">
                 </li>
                 <li onclick="Language('open')">
                     <img src="/assets/imgs/language-outline-svgrepo-com.svg" width="18" alt="">
@@ -64,6 +64,20 @@
                     <img src="/assets/imgs/contact-svgrepo-com.svg" width="18" alt="">
                     <p><a href="https://t.me/utopian_uz">Contact us</a></p>
                 </li>
+                <li class="logout">
+                    <?xml version="1.0" encoding="utf-8"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+                    <svg viewBox="0 0 24 24" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M21 12L13 12" stroke="#323232" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path d="M18 15L20.913 12.087V12.087C20.961 12.039 20.961 11.961 20.913 11.913V11.913L18 9"
+                            stroke="#323232" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        <path
+                            d="M16 5V4.5V4.5C16 3.67157 15.3284 3 14.5 3H5C3.89543 3 3 3.89543 3 5V19C3 20.1046 3.89543 21 5 21H14.5C15.3284 21 16 20.3284 16 19.5V19.5V19"
+                            stroke="#323232" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <p><a href="#">Log out</a></p>
+                </li>
             </ul>
             <text>Version: 1.0.0</text>
         </div>
@@ -72,14 +86,14 @@
     <!-- settings coding end -->
 
     <!-- language -->
-    
+
     <div class="language">
         <div class="container">
             <div class="top">
                 <img src="/assets/imgs/arrow-back-svgrepo-com.svg" width="20" alt="" onclick="Language('back')">
                 <p>Language</p>
                 <img src="/assets/imgs/cancel-close-svgrepo-com.svg" onclick="Language('close')" alt="">
-            </div> 
+            </div>
             <div class="bottom">
                 <ul>
                     <li><img src="/assets/imgs/tick.png" alt="">O'zbek</li>
@@ -393,6 +407,8 @@
 
     <div class="chat">
         <div class="chat-navbar">
+            <img src="/assets/imgs/arrow-back-svgrepo-com.svg" width="24" alt="" onclick="chat_back()"
+                class="chat-back">
             <div class="left">
                 <div class="img">
                     <img src="/assets/imgs/travis.png" class="user-img" alt="">
@@ -594,7 +610,8 @@
                     <img src="/assets/imgs/profile-1335-svgrepo-com.svg" title="Bio" alt="">
                 </div>
                 <div class="right">
-                    <p>18 years old developer from Uzbekistan. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque, illo.</p>
+                    <p>18 years old developer from Uzbekistan. Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                        Neque, illo.</p>
                     <span>Bio</span>
                 </div>
             </div>
@@ -649,7 +666,7 @@
             });
 
             edit.addEventListener("click", function (event) {
-                event.preventDefault(); 
+                event.preventDefault();
                 profil_edit.style.display = "flex";
             });
         });
