@@ -1,3 +1,7 @@
+if (elThemeTogglerButton) {
+    elThemeTogglerButton.addEventListener('click', switchTheme);
+}
+
 function autoExpand(textarea) {
     textarea.style.height = 'auto';
     textarea.style.height = (textarea.scrollHeight) + 'px';
@@ -128,3 +132,12 @@ lis.forEach(element => {
         });
     });
 });
+
+const users = document.querySelectorAll('.messages .bottom .user');
+const messages = document.querySelector('.messages');
+users.forEach(element => {
+    element.addEventListener('click', () => {
+        chat.style.display = 'flex';
+        messages.style.display = 'none';
+    })
+})

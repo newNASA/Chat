@@ -1,0 +1,16 @@
+@media screen and (max-width: 426px) {
+    .chat, nav, .user-infos{
+        display: none;
+    }
+
+    .messages{
+        width: 100%;
+        .bottom{
+            width: 100%;
+            .user{
+                width: 100%;
+            }
+        }
+    }
+    
+}
