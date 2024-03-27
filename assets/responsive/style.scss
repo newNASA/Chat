@@ -1,0 +1,34 @@
+@media screen and (max-width: 426px) {
+    .chat, nav, .user-infos{
+        display: none;
+    }
+
+    .messages{
+        width: 100%;
+        .bottom{
+            width: 100%;
+            .user{
+                width: 100%;
+            }
+        }
+    }
+
+    .chat{
+        width: 100%;
+        .chat-navbar{
+            gap: 10px;
+            .chat-back{
+                display: block;
+            }
+            .left{
+                flex: 1;
+            }
+        }
+        .sender form{
+            textarea{
+                width: 250px;
+            }
+        }
+    }
+    
+}

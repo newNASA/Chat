@@ -1,3 +1,4 @@
+
 function autoExpand(textarea) {
     textarea.style.height = 'auto';
     textarea.style.height = (textarea.scrollHeight) + 'px';
@@ -44,7 +45,6 @@ let isChatExpanded = false;
 
 profile_info.addEventListener('click', function () {
     isChatExpanded = !isChatExpanded;
-
     if (isChatExpanded) {
         chat.style.width = '100%';
         user_infos.style.marginLeft = '100%';
@@ -58,7 +58,6 @@ profile_info.addEventListener('click', function () {
 
 user_info_close.addEventListener('click', function () {
     isChatExpanded = !isChatExpanded;
-    
     user_infos.style.transform = '100%';
     chat.style.width = '100%';
     user_infos.style.display = 'none';
@@ -166,7 +165,23 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-const users = document.querySelectorAll('#user-card')
+
+const users = document.querySelectorAll('.messages .bottom .user');
+const messages = document.querySelector('.messages');
+
+if(window.innerWidth <= 426){
+    users.forEach(element => {
+        element.addEventListener('click', () => {
+            chat.style.display = 'flex';
+            messages.style.display = 'none';
+        })
+    })
+}
+
+function chat_back(){
+    chat.style.display = 'none';
+    messages.style.display = 'block';
+}
 
 
 if (elThemeTogglerButton) {

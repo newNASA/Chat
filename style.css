@@ -9,6 +9,15 @@ body {
   display: flex;
 }
 
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--black);
+}
+
 :root {
   --white: #fff;
   --light-white: #fafafa;
@@ -17,6 +26,8 @@ body {
   --medium-black: #8c8c8cff;
   --gray: rgba(244, 244, 247, 1);
   --green: #27ae60;
+  --opacity-green:rgba(39, 174, 96, 0.7);
+  --light-red: #ff1a1a;
 }
 
 button {
@@ -66,11 +77,12 @@ nav .bottom button img {
 
 .messages {
   width: 350px;
-  height: 98vh;
+  height: 100vh;
   border-right: 1px solid var(--light-black);
 }
 .messages .top {
   padding: 35px 20px 0 20px;
+  height: 16%;
 }
 .messages .top h2 {
   font-size: 23px;
@@ -105,13 +117,14 @@ nav .bottom button img {
 .messages .bottom {
   margin-top: 15px;
   overflow-y: auto;
-  height: 84%;
+  height: 81%;
 }
 .messages .bottom::-webkit-scrollbar {
   display: none;
 }
 .messages .bottom .user {
   display: flex;
+  justify-content: space-between;
   gap: 10px;
   padding: 10px 20px;
   transition: 0.5s;
@@ -134,6 +147,7 @@ nav .bottom button img {
 }
 .messages .bottom .user .center {
   width: 250px;
+  flex: 1;
 }
 .messages .bottom .user .center .name {
   display: flex;
@@ -193,18 +207,21 @@ nav .bottom button img {
 }
 
 .chat {
-  width: 100%;
+  width: 52%;
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  transition: 0.5s;
 }
 .chat .chat-navbar {
   border-bottom: 1px solid var(--light-white);
   padding: 10px;
   display: flex;
   justify-content: space-between;
-  height: 60px;
+}
+.chat .chat-navbar .chat-back {
+  display: none;
 }
 .chat .chat-navbar .left {
   display: flex;
@@ -247,14 +264,15 @@ nav .bottom button img {
   max-width: 80%;
   font-size: 0.9rem;
   margin-top: 10px;
+  clear: both;
 }
 .chat .message .xabar:first-child {
   margin: 0;
 }
 .chat .message .left {
-  float: right;
   background-color: var(--green);
   color: var(--white);
+  float: right;
 }
 .chat .sender {
   padding: 10px 20px;
@@ -291,4 +309,359 @@ nav .bottom button img {
 }
 .chat .sender button {
   color: var(--green);
+}
+
+.user-infos {
+  width: 25%;
+  border-left: 1px solid var(--light-black);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: 0.5s;
+}
+.user-infos .top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.user-infos .top img {
+  width: 12px;
+  cursor: pointer;
+}
+.user-infos .user-profile {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.user-infos .user-profile img {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+}
+.user-infos .user-profile span {
+  color: var(--green);
+}
+.user-infos .infos {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.user-infos .infos .info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.user-infos .infos .info p {
+  font-size: 0.9rem;
+}
+.user-infos .infos .info span {
+  color: var(--medium-black);
+  font-size: 0.8rem;
+}
+.user-infos .infos .info img {
+  width: 18px;
+  height: 18px;
+  fill: var(--medium-black) !important;
+}
+.user-infos .infos .username .right p {
+  color: var(--green);
+  cursor: pointer;
+}
+.user-infos .infos .username .right p:hover {
+  text-decoration: underline;
+}
+
+.fixer {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  display: none;
+  z-index: 500;
+}
+
+.settings {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  display: none;
+  justify-content: center;
+  align-items: start;
+  padding-top: 100px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  transition: 0.5s;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.2);
+}
+.settings .container {
+  width: 400px;
+  padding: 15px;
+  background-color: var(--white);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 999;
+  animation: setting 0.5s;
+}
+@keyframes setting {
+  from {
+    transform: translateY(-130%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+.settings .container .top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.settings .container .top img {
+  width: 12px;
+  cursor: pointer;
+}
+.settings .container .user-profile {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.settings .container .user-profile img {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+}
+.settings .container .user-profile span {
+  color: var(--medium-black);
+}
+.settings .container .user-profile span:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+.settings .container ul .logout a {
+  color: var(--light-red);
+}
+.settings .container ul .logout svg {
+  width: 18px;
+}
+.settings .container ul .logout svg path {
+  stroke: var(--light-red);
+}
+.settings .container ul .logout:hover {
+  background-color: rgba(248, 0, 0, 0.2);
+}
+.settings .container ul li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: 0.3s;
+  justify-content: space-between;
+}
+.settings .container ul li p {
+  flex: 1;
+}
+.settings .container ul li:hover {
+  background-color: var(--light-black);
+}
+.settings .container ul li img {
+  fill: var(--green) !important;
+}
+.settings .container text {
+  text-decoration: none;
+  text-align: center;
+  color: var(--medium-black);
+  font-size: 0.7rem;
+}
+
+.profile-edit {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  transition: 0.5s;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.2);
+}
+.profile-edit .container {
+  width: 400px;
+  padding: 15px;
+  background-color: var(--white);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 999;
+}
+.profile-edit .container .top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+.profile-edit .container .top p {
+  flex: 1;
+}
+.profile-edit .container .top img {
+  cursor: pointer;
+}
+.profile-edit .container .top img:last-child {
+  width: 12px;
+}
+.profile-edit .container .img form .file-label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin: 10px 0;
+}
+.profile-edit .container .img form .file-label .pro-img {
+  width: 100px;
+  height: 100px;
+  background-color: #000;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.profile-edit .container .img form .file-label .pro-img:hover .camera {
+  transform: translateY(-25px);
+}
+.profile-edit .container .img form .file-label .pro-img .camera {
+  transition: 0.5s;
+  background: var(--opacity-green);
+  display: flex;
+  justify-content: center;
+  padding-bottom: 10px;
+}
+.profile-edit .container .img form .file-label .file {
+  display: none;
+}
+.profile-edit .container .img form .file-label .file-custom {
+  margin-left: 10px;
+}
+.profile-edit .container .img form #profileImage {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.profile-edit .container .img form .infos {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 30px;
+}
+.profile-edit .container .img form .infos label {
+  font-size: 14px;
+  color: var(--medium-black);
+}
+.profile-edit .container .img form .infos input, .profile-edit .container .img form .infos textarea {
+  width: 100%;
+  outline: none;
+  padding: 8px;
+  border-radius: 10px;
+  border: 1px solid var(--medium-black);
+  resize: none;
+}
+.profile-edit .container .img form .infos button {
+  padding: 10px 20px;
+  background-color: var(--green);
+  color: var(--white);
+  border-radius: 10px;
+}
+.profile-edit .container .img form label, .profile-edit .container .img form input {
+  display: block;
+}
+
+.logout {
+  align-items: center;
+  padding: 0;
+}
+.logout .container span {
+  font-size: 0.9rem;
+  color: var(--medium-black);
+}
+.logout .container .btns {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 10px;
+}
+.logout .container .btns button {
+  padding: 5px 10px;
+  color: var(--white);
+  border-radius: 5px;
+  font-size: 1rem;
+}
+.logout .container .btns button:first-child {
+  background-color: var(--medium-black);
+}
+.logout .container .btns button:last-child {
+  background-color: var(--light-red);
+}
+
+.language {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  transition: 0.5s;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.2);
+}
+.language .container {
+  width: 400px;
+  padding: 15px;
+  background-color: var(--white);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 999;
+}
+.language .container .top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+.language .container .top p {
+  flex: 1;
+}
+.language .container .top img {
+  cursor: pointer;
+}
+.language .container .top img:last-child {
+  width: 12px;
+}
+.language .container .bottom ul li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+.language .container .bottom ul li:hover {
+  background-color: var(--light-black);
+}
+.language .container .bottom ul li img {
+  fill: var(--green) !important;
+  display: none;
 }/*# sourceMappingURL=style.css.map */
