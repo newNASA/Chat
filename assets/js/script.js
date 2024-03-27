@@ -8,7 +8,7 @@ var originalHeight = textarea.scrollHeight;
 
 textarea.addEventListener('input', function () {
     autoExpand(this);
-
+    
     if (textarea.scrollHeight > originalHeight) {
         originalHeight = textarea.scrollHeight;
     }
@@ -33,5 +33,142 @@ const messageContainer = document.getElementById('messageContainer');
 messageContainer.scrollTop = messageContainer.scrollHeight;
 
 function scrollToBottom() {
-  messageContainer.scrollTop = messageContainer.scrollHeight;
+    messageContainer.scrollTop = messageContainer.scrollHeight;
+}
+
+const profile_info = document.querySelector('.chat .chat-navbar .right img');
+const chat = document.querySelector('.chat');
+const user_infos = document.querySelector('.user-infos');
+const user_info_close = document.querySelector('.user-infos .top img');
+let isChatExpanded = false;
+
+profile_info.addEventListener('click', function () {
+    isChatExpanded = !isChatExpanded;
+
+    if (isChatExpanded) {
+        chat.style.width = '100%';
+        user_infos.style.marginLeft = '100%';
+        user_infos.style.display = 'none';
+    } else {
+        user_infos.style.marginLeft = '';
+        chat.style.width = '';
+        user_infos.style.display = '';
+    }
+});
+
+user_info_close.addEventListener('click', function () {
+    isChatExpanded = !isChatExpanded;
+    
+    user_infos.style.transform = '100%';
+    chat.style.width = '100%';
+    user_infos.style.display = 'none';
+});
+
+const setting = document.querySelector('.settings');
+
+function settings(e) {
+    if (e === "open") {
+        setting.style.display = 'flex';
+    } else {
+        setting.style.display = 'none';
+    }
+}
+
+const out = document.querySelector('.logout');
+
+function logout(e) {
+    if (e === "open") {
+        out.style.display = 'flex';
+    } else {
+        out.style.display = 'none';
+    }
+}
+
+const editProfile = document.querySelector('.profile-edit');
+function EditProfile(e) {
+    if (e === "open") {
+        setting.style.display = 'none';
+        editProfile.style.display = 'flex';
+    } else if (e === "back") {
+        editProfile.style.display = 'none';
+        setting.style.display = 'flex';
+    } else if (e === "close") {
+        editProfile.style.display = 'none';
+    }
+}
+
+const language = document.querySelector('.language');
+
+function Language(e) {
+    if (e === "open") {
+        setting.style.display = 'none';
+        language.style.display = 'flex';
+    } else if (e === 'back') {
+        language.style.display = 'none';
+        setting.style.display = 'flex'
+    } else if (e === 'close') {
+        language.style.display = 'none';
+    }
+}
+
+const lis = document.querySelectorAll('.language .bottom ul li');
+
+lis.forEach(element => {
+    const img = element.querySelector('img');
+    element.addEventListener('click', () => {
+        lis.forEach(item => {
+            const itemImg = item.querySelector('img');
+            if (item === element) {
+                img.style.display = 'inline-block';
+            } else {
+                if (itemImg && itemImg.style.display !== 'none') {
+                    itemImg.style.display = 'none';
+                }
+            }
+        });
+    });
+});
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const fileInput = document.getElementById('fileInput');
+    const profileImage = document.getElementById('profileImage');
+
+    fileInput.addEventListener('change', function () {
+        const file = this.files[0];
+
+        if (file) {
+            const reader = new FileReader();
+
+            reader.onload = function (e) {
+                profileImage.src = e.target.result;
+            };
+
+            reader.readAsDataURL(file);
+        }
+    });
+});
+
+// profile edit open
+
+document.addEventListener('DOMContentLoaded', function () {
+    const profile_edit_x = document.querySelector(".profil-edit-x");
+    const profil_edit = document.querySelector(".profile-edit");
+    const edit = document.querySelector(".edit");
+
+    profile_edit_x.addEventListener("click", function () {
+        profil_edit.style.display = "none";
+    });
+
+    edit.addEventListener("click", function (event) {
+        event.preventDefault(); 
+        profil_edit.style.display = "flex";
+    });
+});
+
+const users = document.querySelectorAll('#user-card')
+
+
+if (elThemeTogglerButton) {
+    elThemeTogglerButton.addEventListener('click', switchTheme);
 }
